@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxLine" format=3 uid="uid://56ffswk6tnh"]
+
+[resource]
+color = Color(0.529031, 0.805564, 0.905738, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 40
