@@ -1,11 +1,23 @@
 SSU GGJ2025 Notes - Daniel Groves
-
+Template:
+________________________________________
+|Date|
+|Object|
+-|function|			-|Status|
+________________________________________
 |1/24|
 Bubble Handler:
 -spawns bubbles as children	-Pending
 -spawns bubble around player	-Pending
 
 Bubble Scene:
--pops when ran into		-Pending
+-pops when ran into		-Partial
 -gives effect contained		-Pending
 -(animated) sprite		-Pending
+
+Effect Components:
+-O2 - normal			-Pending
+-SF6 - slow			-Pending
+-He - fast			-Pending
+-CO2 - nothin			-Pending
+-OH2 - boom			-Pending
