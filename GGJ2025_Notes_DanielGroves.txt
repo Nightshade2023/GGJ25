@@ -13,8 +13,8 @@ Bubble Handler:
 
 Bubble Class:
 -pops when ran into		-Complete
--gives effect contained		-Pending
--(animated) sprite		-Pending
+-gives effect contained		-Partial
+-(animated) sprite		-Partial
 
 Effect Scene:
 -O2 - normal			-Complete
