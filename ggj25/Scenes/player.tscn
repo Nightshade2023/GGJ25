@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://fjevqv8p8fd4"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_8htqa"]
+[ext_resource type="Texture2D" uid="uid://cb887bc6161ia" path="res://icon.svg" id="2_sri6m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jj3v"]
+radius = 67.0
+height = 134.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8htqa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sri6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6jj3v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DashTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
