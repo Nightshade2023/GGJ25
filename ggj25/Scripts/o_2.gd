@@ -7,5 +7,11 @@ func do_behavior(entity):
 	print(entity.Breath)
 	print("BREATHE DAMN YOU!")
 	entity.Breath += refill_amount
+	$Sprite2D/AnimationPlayer.play("pop_o2")
 	print(entity.Breath)
 	
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	print("Popped!")
+	queue_free()

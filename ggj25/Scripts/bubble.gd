@@ -25,10 +25,10 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Popping!")
 		# Pop
 		print("*Dies*")
-		queue_free()
+		#queue_free()
 	elif body.is_in_group("enemy"):
 		# Trigger Pop Animation
 		print("Popping!")
 		# Pop
 		print("*Dies*")
-		queue_free()
+		#queue_free()
