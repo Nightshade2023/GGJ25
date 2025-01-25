@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://63haq56tbuob"
-path="res://.godot/imported/small_bubble_pop_sheet.png-34a1b709c11538dadcb3369311cccda2.ctex"
+uid="uid://nepuko4f0ag3"
+path="res://.godot/imported/large_bubble_pop_sheet.png-1fce4f1d5861e423c0e4ff7c9ee1607f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Gameplay/small_bubble_pop_sheet.png"
-dest_files=["res://.godot/imported/small_bubble_pop_sheet.png-34a1b709c11538dadcb3369311cccda2.ctex"]
+source_file="res://Assets/Art/Gameplay/large_bubble_pop_sheet.png"
+dest_files=["res://.godot/imported/large_bubble_pop_sheet.png-1fce4f1d5861e423c0e4ff7c9ee1607f.ctex"]
 
 [params]
 
