@@ -13,7 +13,7 @@ const DASHSPEED := 2000.0
 func _physics_process(delta: float) -> void:
 	_handle_player_controls(delta)
 	_tick_breath(delta)
-	print(Breath)
+	#print(Breath)
 	move_and_slide()
 	
 func _handle_player_controls(delta: float) -> void:

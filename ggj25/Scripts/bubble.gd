@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func do_behavior():
+func do_behavior(entity):
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
@@ -20,13 +20,14 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		# Signal Effect Given
 		print("Effect Applied!")
-		# Trigger Pop Animationp
+		do_behavior(body)
+		# Trigger Pop Animation
 		print("Popping!")
 		# Pop
 		print("*Dies*")
 		queue_free()
 	elif body.is_in_group("enemy"):
-		# Trigger Pop Animationp
+		# Trigger Pop Animation
 		print("Popping!")
 		# Pop
 		print("*Dies*")
