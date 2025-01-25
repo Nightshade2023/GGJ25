@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://8pqwyyhpnmup"]
+[gd_scene load_steps=3 format=3 uid="uid://8pqwyyhpnmup"]
 
 [ext_resource type="PackedScene" uid="uid://fjevqv8p8fd4" path="res://Scenes/player.tscn" id="1_hf3ck"]
 [ext_resource type="PackedScene" path="res://Scenes/bubble_handler.tscn" id="2_qlbj3"]
-[ext_resource type="PackedScene" uid="uid://d02maub8lgej2" path="res://Scenes/crab.tscn" id="3_o5q25"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,6 +10,3 @@
 [node name="BubbleHandler" parent="Player" instance=ExtResource("2_qlbj3")]
 
 [node name="BubbleContainer" type="Node2D" parent="."]
-
-[node name="Crab" parent="." instance=ExtResource("3_o5q25")]
-position = Vector2(790, 446)

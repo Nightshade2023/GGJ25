@@ -3,6 +3,7 @@ extends Node2D
 var bubbleInstances = [preload("res://Scenes/Bubble_Effects/o2.tscn"),
 ]
 var bubblesSpawned: int
+var spawn_radius := 500
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,8 +19,10 @@ func _spawn_bubble():
 	# Position the bubble relative to the player
 	var bubble_offset = Vector2(0, 0)
 	# Circle spawn, not outside yet
-	bubble_offset.x = randf_range(-500.0, 500.0)
-	bubble_offset.y = randf_range(-500.0, 500.0)
+	var x_dir = (randi_range(0,1)*2)-1
+	var y_dir = (randi_range(0,1)*2)-1
+	bubble_offset.x = spawn_radius*x_dir
+	bubble_offset.y = spawn_radius*y_dir
 	
 	new_bubble.position = $"..".position + bubble_offset
 	

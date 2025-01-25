@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsp8jx3j31mlu"]
+[gd_scene load_steps=11 format=3 uid="uid://bmjgemrotvdlw"]
 
-[ext_resource type="StyleBox" uid="uid://bgi5mikoysebl" path="res://Scenes/buttondisabled.tres" id="1_3td4g"]
+[ext_resource type="StyleBox" path="res://Scenes/buttondisabled.tres" id="1_3td4g"]
 [ext_resource type="Script" path="res://Scenes/button_functions.gd" id="1_qwlhk"]
-[ext_resource type="StyleBox" uid="uid://cfwcgcl8juhii" path="res://Scenes/button.tres" id="1_w5t35"]
+[ext_resource type="StyleBox" path="res://Scenes/button.tres" id="1_w5t35"]
 [ext_resource type="FontFile" uid="uid://cgobhkmxevoer" path="res://comicsans/comicbd.ttf" id="2_8xf8w"]
 [ext_resource type="Texture2D" uid="uid://b8jr8lus6r8tr" path="res://Assets/buttonpop.png" id="3_sqf6q"]
-[ext_resource type="StyleBox" uid="uid://pbe0ybp5pwo3" path="res://Scenes/buttonpressed.tres" id="3_ydpty"]
+[ext_resource type="StyleBox" path="res://Scenes/buttonpressed.tres" id="3_ydpty"]
 [ext_resource type="FontFile" uid="uid://c37t37ugjwlo" path="res://comicsans/comic.ttf" id="7_ue4gw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chuag"]

@@ -4,11 +4,13 @@ extends Bubble
 
 func do_behavior(entity):
 	# O2 Behavior
-	print(entity.Breath)
-	print("BREATHE DAMN YOU!")
-	entity.Breath += refill_amount
+	if entity.is_in_group("player"):
+		print(entity.Breath)
+		print("BREATHE DAMN YOU!")
+		entity.Breath += refill_amount
 	$Sprite2D/AnimationPlayer.play("pop_o2")
-	print(entity.Breath)
+	if entity.is_in_group("player"):
+		print(entity.Breath)
 	
 
 

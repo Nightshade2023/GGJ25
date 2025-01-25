@@ -18,7 +18,8 @@ func _physics_process(delta: float) -> void:
 			if distance <= closest_distance:
 				closest_bubble = bubble
 		if not closest_bubble:
-			print("THERE ARE NO BUBBLES!")
+			#print("THERE ARE NO BUBBLES!")
+			pass
 		else:
 			point_of_interest = closest_bubble
 	else:

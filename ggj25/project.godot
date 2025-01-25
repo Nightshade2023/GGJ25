@@ -60,3 +60,4 @@ Space={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.0980392, 0.254902, 0.454902, 1)
