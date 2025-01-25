@@ -7,11 +7,12 @@ ________________________________________
 ________________________________________
 |1/24|
 Bubble Handler:
--spawns bubbles as children	-Pending
--spawns bubble around player	-Pending
+-spawns bubbles as children	-Complete
+-spawns bubble around player	-Complete
+-spawns bubbles outside camera	-Pending
 
 Bubble Class:
--pops when ran into		-Partial
+-pops when ran into		-Complete
 -gives effect contained		-Pending
 -(animated) sprite		-Pending
 
