@@ -1,0 +1,11 @@
+SSU GGJ2025 Notes - Daniel Groves
+
+|1/24|
+Bubble Handler:
+-spawns bubbles as children	-Pending
+-spawns bubble around player	-Pending
+
+Bubble Scene:
+-pops when ran into		-Pending
+-gives effect contained		-Pending
+-(animated) sprite		-Pending
