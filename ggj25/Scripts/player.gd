@@ -25,6 +25,8 @@ func _ready() -> void:
 	$Camera2D.limit_top = -GameInfo.map_size.y/2
 	$Camera2D.limit_right = GameInfo.map_size.x/2
 	$Camera2D.limit_left = -GameInfo.map_size.x/2
+	$AudioStreamPlayer2D.stream = GameInfo.current_theme
+	$AudioStreamPlayer2D.play()
 
 func _physics_process(delta: float) -> void:
 	TimeAlive += delta
@@ -86,11 +88,13 @@ func _on_speed_timer_timeout() -> void:
 	plr_speed_scale = 1
 
 func _on_theme_1_pressed() -> void:
-	$AudioStreamPlayer2D.stream = ResourceLoader.load("res://GJ_Music.ogg")
+	GameInfo.current_theme = ResourceLoader.load("res://GJ_Music.ogg")
+	$AudioStreamPlayer2D.stream = GameInfo.current_theme
 	$AudioStreamPlayer2D.play()
 
 func _on_theme_2_pressed() -> void:
-	$AudioStreamPlayer2D.stream = ResourceLoader.load("res://example_melody_GGJ25.mp3")
+	GameInfo.current_theme = ResourceLoader.load("res://example_melody_GGJ25.mp3")
+	$AudioStreamPlayer2D.stream = GameInfo.current_theme
 	$AudioStreamPlayer2D.play()
 	
 func update_score() -> void:
