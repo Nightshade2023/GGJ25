@@ -99,7 +99,7 @@ frame = 9
 position = Vector2(578, 248)
 sprite_frames = SubResource("SpriteFrames_32qjh")
 animation = &"PinchRight"
-frame_progress = 0.387967
+frame_progress = 0.40378
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer/AnimatedSprite2D"]
 zoom = Vector2(2, 2)

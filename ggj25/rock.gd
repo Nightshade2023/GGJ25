@@ -3,7 +3,7 @@ extends StaticBody2D
 @export var type : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if $CollisionShape2D
+	rotation_degrees = randf_range(0,360)
 	match type:
 		0:
 			$AnimatedSprite2D.animation = "small1"

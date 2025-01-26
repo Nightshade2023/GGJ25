@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var point_of_interest : Node
 var obstacles := []
-const SPEED = 400.0
+const SPEED = 200.0
 const ACCEL = 10.0
 
 
@@ -48,12 +48,12 @@ func _physics_process(delta: float) -> void:
 		var avoidance_direction := Vector2.ZERO
 		var obstacle_count = 0
 		for obstacle in obstacles:
-			avoidance_direction += obstacle.global_position - global_position
+			avoidance_direction += global_position - obstacle.global_position
 			obstacle_count+=1
 		if obstacle_count > 0:
 			avoidance_direction = avoidance_direction/obstacle_count
 		direction = point_of_interest.global_position - global_position
-		direction = direction + avoidance_direction
+		direction = direction + avoidance_direction/2
 		direction = direction.normalized()
 		
 	velocity = lerp(velocity, SPEED * direction, ACCEL * delta)

@@ -73,9 +73,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mww27"]
 size = Vector2(26, 20)
 
-[node name="rock" type="StaticBody2D"]
+[node name="rock" type="StaticBody2D" groups=["enemy_obstacle"]]
 script = ExtResource("1_lyfy4")
-type = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_neybi")

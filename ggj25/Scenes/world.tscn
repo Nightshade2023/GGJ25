@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvx1tmqlei2ed"]
+[gd_scene load_steps=7 format=3 uid="uid://dvx1tmqlei2ed"]
 
 [ext_resource type="PackedScene" uid="uid://fjevqv8p8fd4" path="res://Scenes/player.tscn" id="1_akik4"]
 [ext_resource type="PackedScene" uid="uid://chekwy7f8gqgr" path="res://Scenes/bubble_handler.tscn" id="2_28nyu"]
 [ext_resource type="PackedScene" uid="uid://d02maub8lgej2" path="res://Scenes/crab.tscn" id="3_sftg2"]
 [ext_resource type="PackedScene" uid="uid://bk7qkmgfj4c3j" path="res://Scenes/water_shader.tscn" id="4_8t8ub"]
 [ext_resource type="PackedScene" uid="uid://51grcab7va5m" path="res://Scenes/shader_tiler.tscn" id="5_8382b"]
+[ext_resource type="PackedScene" uid="uid://cj4imvj4y0lqy" path="res://Scenes/rock_handler.tscn" id="6_2okhc"]
 
 [node name="World" type="Node2D"]
 
@@ -21,3 +22,5 @@ position = Vector2(1148, 2)
 
 [node name="ShaderTiler" parent="." instance=ExtResource("5_8382b")]
 tile_scene = ExtResource("4_8t8ub")
+
+[node name="RockHandler" parent="." instance=ExtResource("6_2okhc")]
