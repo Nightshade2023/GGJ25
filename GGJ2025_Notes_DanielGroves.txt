@@ -1,24 +1,23 @@
 SSU GGJ2025 Notes - Daniel Groves
 Template:
 ________________________________________
-|Date|
 |Object|
 -|function|			-|Status|
 ________________________________________
-|1/24|
 Bubble Handler:
 -spawns bubbles as children	-Complete
 -spawns bubble around player	-Complete
--spawns bubbles outside camera	-Pending
+-spawns bubbles outside camera	-Complete
 
 Bubble Class:
 -pops when ran into		-Complete
 -gives effect contained		-Partial
--(animated) sprite		-Partial
+-(animated) sprite		-Complete
 
 Effect Scene:
 -O2 - normal			-Complete
--SF6 - slow			-Pending
--He - fast			-Pending
--CO2 - nothin			-Pending
+-SF6 - slow			-Complete
+-He - fast			-Complete
+-CO2 - nothin			-Complete
 -OH2 - boom			-Pending
+-"Gold" - full			-Pending
