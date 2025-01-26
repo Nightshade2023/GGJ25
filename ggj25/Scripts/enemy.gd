@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		if obstacle_count > 0:
 			avoidance_direction = avoidance_direction/obstacle_count
 		direction = point_of_interest.global_position - global_position
-		direction = direction + avoidance_direction/2
+		direction = direction + avoidance_direction/(obstacle_count + 1)
 		direction = direction.normalized()
 		
 	velocity = lerp(velocity, SPEED * direction, ACCEL * delta)
