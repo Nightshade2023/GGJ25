@@ -1,6 +1,6 @@
 extends Node2D
 
-var bubbleInstances = [preload("res://Scenes/Bubble_Effects/o2.tscn"),
+var bubbleInstances = [preload("res://Scenes/Bubble_Effects/o2.tscn"),preload("res://Scenes/Bubble_Effects/sf6.tscn"),preload("res://Scenes/Bubble_Effects/he.tscn")
 ]
 var bubblesSpawned: int
 var spawn_radius := 500
@@ -14,7 +14,7 @@ func _spawn_bubble():
 		print("No bubbles.")
 		return
 
-	var new_bubble = bubbleInstances.pick_random().instantiate()
+	var new_bubble : Bubble = bubbleInstances.pick_random().instantiate()
 	
 	# Position the bubble relative to the player
 	var bubble_offset = Vector2(0, 0)
@@ -26,6 +26,7 @@ func _spawn_bubble():
 	bubble_offset.y = spawn_radius*y_dir
 	
 	new_bubble.position = $"..".position + bubble_offset
+	new_bubble.size = randi_range(1,3)
 	
 	# Get the BubbleContainer node
 	var bubble_container = get_node("/root/Node2D2/BubbleContainer")
@@ -36,4 +37,5 @@ func _spawn_bubble():
 	#print(bubblesSpawned)
 	
 func _on_timer_timeout() -> void:
+	#print("timer start")
 	_spawn_bubble()

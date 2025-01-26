@@ -11,6 +11,7 @@ var TimeAlive = 0
 @export var BreathLossRate = 2
 @export var Breath = 100.0
 @export var score : int
+@export var plr_speed_scale : float = 1
 
 func _physics_process(delta: float) -> void:
 	TimeAlive += delta
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	
 func _handle_player_controls(delta: float) -> void:
 	var direction:= Vector2(int(Input.is_action_pressed("D")) - int(Input.is_action_pressed("A")),int(Input.is_action_pressed("S")) - int(Input.is_action_pressed("W"))).normalized()
-	velocity = lerp(velocity, direction * SPEED, ACCEL * delta)
+	velocity = lerp(velocity, direction * SPEED * plr_speed_scale, ACCEL * delta)
 	var look_pos = global_position + Vector2(-velocity.y, velocity.x)
 	look_at(look_pos)
 	if velocity.length() < 20:
@@ -39,7 +40,7 @@ func _handle_player_controls(delta: float) -> void:
 		$DashTimer.start()
 		Breath -= 10
 		$AnimatedSprite2D.speed_scale = 3
-	print(Breath)
+	#print(Breath)
 	
 func _tick_breath(delta: float) -> void:
 	Breath -= BreathLossRate * delta
@@ -49,6 +50,15 @@ func _on_dash_timer_timeout() -> void:
 	SPEED = 500.0
 	$AnimatedSprite2D.speed_scale = 1
 	
+func set_speed_scale(scale : float, seconds : int) -> void:
+	$SpeedTimer.stop()
+	plr_speed_scale = scale
+	$SpeedTimer.start(seconds)
+	
 func die():
 	
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn") # Temporary
+
+
+func _on_speed_timer_timeout() -> void:
+	plr_speed_scale = 1

@@ -25,3 +25,13 @@ func _on_sf_xbar_drag_ended(value_changed: bool) -> void:
 		GameInfo.music_vol = $"../../SettingsPage/Panel/musiclabel/musicbar".value
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(GameInfo.sfx_vol))
 		
+
+
+func _on_musicbar_value_changed(value: float) -> void:
+	GameInfo.music_vol = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(GameInfo.music_vol))
+
+
+func _on_sf_xbar_value_changed(value: float) -> void:
+	GameInfo.music_vol = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(GameInfo.sfx_vol))

@@ -282,4 +282,6 @@ parameters/looping = true
 [connection signal="pressed" from="PanelContainer/Panel/CreditsButton" to="PanelContainer/Panel" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="SettingsPage/Panel/SettingsButton" to="SettingsPage/Panel" method="_on_settings_button_pressed"]
 [connection signal="drag_ended" from="SettingsPage/Panel/musiclabel/musicbar" to="PanelContainer/Panel" method="_on_musicbar_drag_ended"]
+[connection signal="value_changed" from="SettingsPage/Panel/musiclabel/musicbar" to="PanelContainer/Panel" method="_on_musicbar_value_changed"]
 [connection signal="drag_ended" from="SettingsPage/Panel/SFXlabel/SFXbar" to="PanelContainer/Panel" method="_on_sf_xbar_drag_ended"]
+[connection signal="value_changed" from="SettingsPage/Panel/SFXlabel/SFXbar" to="PanelContainer/Panel" method="_on_sf_xbar_value_changed"]
