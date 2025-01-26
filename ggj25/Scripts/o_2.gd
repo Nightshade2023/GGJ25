@@ -1,6 +1,6 @@
 extends Bubble
 
-@export var refill_amount = randf_range(2.0 * size, 10.0 * size)
+@onready var refill_amount = randf_range(2.0 * size, 10.0 * size)
 
 func do_behavior(entity):
 	# O2 Behavior
