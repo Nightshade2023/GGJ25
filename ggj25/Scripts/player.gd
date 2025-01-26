@@ -13,17 +13,28 @@ var TimeAlive = 0
 @export var score : int
 @export var plr_speed_scale : float = 1
 
+func _ready() -> void:
+	$Camera2D.limit_bottom = GameInfo.map_size.y/2
+	$Camera2D.limit_top = -GameInfo.map_size.y/2
+	$Camera2D.limit_right = GameInfo.map_size.x/2
+	$Camera2D.limit_left = -GameInfo.map_size.x/2
+
 func _physics_process(delta: float) -> void:
 	TimeAlive += delta
 	_handle_player_controls(delta)
 	_tick_breath(delta)
 	score = int(TimeAlive)
+	limit_position()
 	#print(score)
 	#print(Breath)
 	move_and_slide()
 	if Breath <= 0:
 		die()
 	Breath = clamp(Breath, 0, 100)
+	
+func limit_position():
+	global_position.x = clamp(global_position.x, -GameInfo.map_size.x/2, GameInfo.map_size.x/2)
+	global_position.y = clamp(global_position.y, -GameInfo.map_size.y/2, GameInfo.map_size.y/2)
 	
 func _handle_player_controls(delta: float) -> void:
 	var direction:= Vector2(int(Input.is_action_pressed("D")) - int(Input.is_action_pressed("A")),int(Input.is_action_pressed("S")) - int(Input.is_action_pressed("W"))).normalized()

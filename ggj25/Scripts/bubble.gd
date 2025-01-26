@@ -30,7 +30,8 @@ func _on_body_entered(body: Node2D) -> void:
 	#print("GET AWAY!!")
 	# Signal Effect Given
 	#print("Effect Applied!")
-	do_behavior(body)
+	if body is CharacterBody2D:
+		do_behavior(body)
 	# Trigger Pop Animation
 	#print("Popping!")
 	# Pop

@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://8pqwyyhpnmup"]
+[gd_scene load_steps=8 format=3 uid="uid://8pqwyyhpnmup"]
 
 [ext_resource type="PackedScene" uid="uid://fjevqv8p8fd4" path="res://Scenes/player.tscn" id="1_hf3ck"]
 [ext_resource type="PackedScene" uid="uid://chekwy7f8gqgr" path="res://Scenes/bubble_handler.tscn" id="2_qlbj3"]
 [ext_resource type="PackedScene" uid="uid://d02maub8lgej2" path="res://Scenes/crab.tscn" id="3_o5q25"]
 [ext_resource type="Texture2D" uid="uid://cb887bc6161ia" path="res://icon.svg" id="4_0nmva"]
+[ext_resource type="PackedScene" uid="uid://bk7qkmgfj4c3j" path="res://Scenes/water_shader.tscn" id="5_871cg"]
+[ext_resource type="Script" path="res://Scripts/water_shader_stuff.gd" id="6_iuah8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my33y"]
 size = Vector2(125, 122.5)
@@ -28,3 +30,6 @@ texture = ExtResource("4_0nmva")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(153.5, 139.75)
 shape = SubResource("RectangleShape2D_my33y")
+
+[node name="WaterShader" parent="." instance=ExtResource("5_871cg")]
+script = ExtResource("6_iuah8")

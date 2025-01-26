@@ -20,16 +20,14 @@ func _spawn_bubble():
 	var bubble_offset = Vector2(0, 0)
 	# Circle spawn
 	spawn_radius = (get_viewport_rect().size.y)
-	var x_dir = (randi_range(0,1)*2)-1
-	var y_dir = (randi_range(0,1)*2)-1
-	bubble_offset.x = spawn_radius*x_dir
-	bubble_offset.y = spawn_radius*y_dir
+	var dir = Vector2(randf_range(-10,10),randf_range(-10,10)).normalized()
+	bubble_offset = spawn_radius*dir
 	
 	new_bubble.position = $"..".position + bubble_offset
 	new_bubble.size = randi_range(1,3)
 	
 	# Get the BubbleContainer node
-	var bubble_container = get_node("/root/Node2D2/BubbleContainer")
+	var bubble_container = $"../../BubbleContainer"
 	if bubble_container:
 		bubble_container.add_child(new_bubble)  # Add the bubble to the stationary node
 	# Add to bubble count

@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var point_of_interest : Node
 var obstacles := []
-const SPEED = 600.0
-const ACCEL = 4.0
+const SPEED = 400.0
+const ACCEL = 10.0
 
 
 # Declare variables
