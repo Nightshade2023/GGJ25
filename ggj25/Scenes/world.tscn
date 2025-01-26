@@ -29,6 +29,7 @@ z_index = -1
 [node name="Sand" parent="." instance=ExtResource("7_1paw5")]
 
 [node name="MrCrabs" type="Node2D" parent="."]
+z_index = -1
 script = ExtResource("8_kr2ro")
 
 [node name="Timer" type="Timer" parent="MrCrabs"]
