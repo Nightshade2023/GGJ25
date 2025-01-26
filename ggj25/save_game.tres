@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SaveGame" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://save.gd" id="1_o5fq4"]
+
+[resource]
+script = ExtResource("1_o5fq4")
+scores = [30, 140, 60, 30]

@@ -5,6 +5,8 @@ var SPEED = 250.0
 const ACCEL = 2.0
 const DASHSPEED := 500.0
 
+var score_data : SaveGame
+
 var TimeAlive = 0
 
 @export var BreathLossRate = 2
@@ -13,6 +15,12 @@ var TimeAlive = 0
 @export var plr_speed_scale : float = 1
 
 func _ready() -> void:
+	score_data = SaveGame.load_savegame()
+	var high_score = score_data.scores.max()
+	if high_score:
+		$CanvasLayer/HighScore.text = "HIGH SCORE:" + str(high_score)
+	else:
+		$CanvasLayer/HighScore.text = ""
 	$Camera2D.limit_bottom = GameInfo.map_size.y/2
 	$Camera2D.limit_top = -GameInfo.map_size.y/2
 	$Camera2D.limit_right = GameInfo.map_size.x/2
@@ -22,7 +30,8 @@ func _physics_process(delta: float) -> void:
 	TimeAlive += delta
 	_handle_player_controls(delta)
 	_tick_breath(delta)
-	score = int(TimeAlive)
+	score = int(TimeAlive) * 10
+	$CanvasLayer/Score.text = "SCORE: " + str(score)
 	limit_position()
 	#print(score)
 	#print(Breath)
@@ -66,7 +75,10 @@ func set_speed_scale(scale : float, seconds : int) -> void:
 	$SpeedTimer.start(seconds)
 	
 func die():
-	
+	if not score_data:
+		score_data.load("res://save_game.tres")
+	score_data.scores.append(score)
+	score_data.write_savegame()
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn") # Temporary
 
 

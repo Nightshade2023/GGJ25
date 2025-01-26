@@ -18,9 +18,8 @@
 [node name="Crab" parent="." instance=ExtResource("3_sftg2")]
 position = Vector2(1148, 2)
 
-[node name="WaterShader" parent="." instance=ExtResource("4_8t8ub")]
-
 [node name="ShaderTiler" parent="." instance=ExtResource("5_8382b")]
 tile_scene = ExtResource("4_8t8ub")
 
 [node name="RockHandler" parent="." instance=ExtResource("6_2okhc")]
+z_index = -1

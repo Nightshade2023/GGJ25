@@ -1,9 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://bmjgemrotvdlw"]
+[gd_scene load_steps=24 format=3 uid="uid://bmjgemrotvdlw"]
 
 [ext_resource type="StyleBox" path="res://Scenes/buttondisabled.tres" id="1_3td4g"]
 [ext_resource type="Script" path="res://Scenes/button_functions.gd" id="1_qwlhk"]
 [ext_resource type="StyleBox" path="res://Scenes/button.tres" id="1_w5t35"]
 [ext_resource type="FontFile" uid="uid://cgobhkmxevoer" path="res://comicsans/comicbd.ttf" id="2_8xf8w"]
+[ext_resource type="Texture2D" uid="uid://doqeoe37gagdx" path="res://Assets/UI/main_menu_background.png" id="2_w3qrd"]
+[ext_resource type="PackedScene" uid="uid://bk7qkmgfj4c3j" path="res://Scenes/water_shader.tscn" id="3_n7tc1"]
+[ext_resource type="PackedScene" uid="uid://51grcab7va5m" path="res://Scenes/shader_tiler.tscn" id="3_p6l4r"]
 [ext_resource type="Texture2D" uid="uid://b8jr8lus6r8tr" path="res://Assets/buttonpop.png" id="3_sqf6q"]
 [ext_resource type="StyleBox" path="res://Scenes/buttonpressed.tres" id="3_ydpty"]
 [ext_resource type="FontFile" uid="uid://c37t37ugjwlo" path="res://comicsans/comic.ttf" id="7_ue4gw"]
@@ -72,6 +75,30 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_chuag")
 script = ExtResource("1_qwlhk")
 
+[node name="Background" type="TextureRect" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w3qrd")
+
+[node name="ShaderTiler" parent="PanelContainer/Panel/Background" instance=ExtResource("3_p6l4r")]
+tile_scene = ExtResource("3_n7tc1")
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/Panel/Background"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -282.0
+offset_right = 282.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.239216, 0.239216, 0.498039)
+
 [node name="Title" type="Label" parent="PanelContainer/Panel"]
 layout_mode = 1
 anchors_preset = 10
@@ -80,7 +107,7 @@ offset_bottom = 105.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("7_ue4gw")
 theme_override_font_sizes/font_size = 75
-text = "GAS BUBBLES"
+text = "Deep Breath"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -166,6 +193,11 @@ theme = SubResource("Theme_uq6ih")
 theme_override_font_sizes/font_size = 45
 text = " Credits "
 icon_alignment = 1
+
+[node name="Title2" type="TextureRect" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="SettingsPage" type="PanelContainer" parent="."]
 visible = false
@@ -288,6 +320,7 @@ parameters/looping = true
 
 [connection signal="pressed" from="PanelContainer/Panel/PlayButton" to="PanelContainer/Panel" method="_on_play_button_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/SettingsButton" to="PanelContainer/Panel" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PanelContainer/Panel/LeaderBoardButton" to="PanelContainer/Panel" method="_on_leader_board_button_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/CreditsButton" to="PanelContainer/Panel" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="SettingsPage/Panel/SettingsButton" to="SettingsPage/Panel" method="_on_settings_button_pressed"]
 [connection signal="drag_ended" from="SettingsPage/Panel/musiclabel/musicbar" to="PanelContainer/Panel" method="_on_musicbar_drag_ended"]

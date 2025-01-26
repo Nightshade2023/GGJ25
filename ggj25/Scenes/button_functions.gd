@@ -39,3 +39,7 @@ func _on_sf_xbar_value_changed(value: float) -> void:
 
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/world.tscn") # Temporary
+
+
+func _on_leader_board_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://leaderboard.tscn")

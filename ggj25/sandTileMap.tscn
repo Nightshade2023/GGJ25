@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1w7lqgcfo43"]
+
+[ext_resource type="Texture2D" uid="uid://eo1cxf58sear" path="res://Assets/Art/Gameplay/sand_tile.png" id="1_gmf0r"]
+[ext_resource type="Script" path="res://Scenes/sand.gd" id="2_pbkcr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7hhf"]
+texture = ExtResource("1_gmf0r")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_umemw"]
+sources/0 = SubResource("TileSetAtlasSource_f7hhf")
+
+[node name="Sand" type="TileMapLayer"]
+z_index = -1
+tile_set = SubResource("TileSet_umemw")
+script = ExtResource("2_pbkcr")
