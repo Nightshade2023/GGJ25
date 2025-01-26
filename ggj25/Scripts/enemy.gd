@@ -57,6 +57,20 @@ func _physics_process(delta: float) -> void:
 		direction = direction.normalized()
 		
 	velocity = lerp(velocity, SPEED * direction, ACCEL * delta)
+	var dot0 = velocity.dot(Vector2(0,1))
+	var dot1 = velocity.dot(Vector2(0,-1))
+	var dot2 = velocity.dot(Vector2(1,0))
+	var dot3 = velocity.dot(Vector2(-1,0))
+
+	match max(dot0, dot1, dot2, dot3):
+		dot0:
+			$AnimatedSprite2D.play("WalkDown")
+		dot1:
+			$AnimatedSprite2D.play("WalkUp")
+		dot2:
+			$AnimatedSprite2D.play("WalkRight")
+		dot3:
+			$AnimatedSprite2D.play("WalkLeft")
 	#print(global_position)
 	move_and_slide()
 
@@ -82,4 +96,4 @@ func _on_plr_detector_body_exited(body: Node2D) -> void:
 
 func _on_attack_body_entered(body: Node2D) -> void:
 	if body.has_method("die"):
-		body.die()
+		get_tree().change_scene_to_file("res://Scenes/DeathCutscene.tscn")
