@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxgjgu16ry1tf"]
+[gd_scene load_steps=6 format=3 uid="uid://dxgjgu16ry1tf"]
 
 [ext_resource type="Texture2D" uid="uid://cb887bc6161ia" path="res://icon.svg" id="1_76lih"]
 [ext_resource type="PackedScene" uid="uid://fjevqv8p8fd4" path="res://Scenes/player.tscn" id="2_04dun"]
 [ext_resource type="PackedScene" uid="uid://d02maub8lgej2" path="res://Scenes/crab.tscn" id="3_vn4w3"]
+[ext_resource type="AudioStream" uid="uid://e76tmg3ox58q" path="res://GJ_Music.ogg" id="4_o6igv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4j20"]
 size = Vector2(125, 122.5)
@@ -23,3 +24,8 @@ shape = SubResource("RectangleShape2D_g4j20")
 
 [node name="Crab" parent="." instance=ExtResource("3_vn4w3")]
 position = Vector2(-492, 584)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_o6igv")
+autoplay = true
+parameters/looping = true
