@@ -1,6 +1,6 @@
 extends Node2D
 
-var bubbleInstances = [preload("res://Scenes/Bubble_Effects/o2.tscn"),preload("res://Scenes/Bubble_Effects/sf6.tscn"),preload("res://Scenes/Bubble_Effects/he.tscn")
+var bubbleInstances = [preload("res://Scenes/Bubble_Effects/o2.tscn"),preload("res://Scenes/Bubble_Effects/sf6.tscn"),preload("res://Scenes/Bubble_Effects/he.tscn"),preload("res://Scenes/Bubble_Effects/co2.tscn")
 ]
 var bubblesSpawned: int
 var spawn_radius := 500
