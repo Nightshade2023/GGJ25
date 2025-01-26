@@ -8,7 +8,7 @@ const DASHSPEED := 2000.0
 
 var TimeAlive = 0
 
-@export var BreathLossRate = 0.5
+@export var BreathLossRate = 2
 @export var Breath = 100.0
 @export var score : int
 
@@ -20,6 +20,8 @@ func _physics_process(delta: float) -> void:
 	#print(score)
 	#print(Breath)
 	move_and_slide()
+	if Breath <= 0:
+		die()
 	Breath = clamp(Breath, 0, 100)
 	
 func _handle_player_controls(delta: float) -> void:
