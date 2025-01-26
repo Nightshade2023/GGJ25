@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://chekwy7f8gqgr" path="res://Scenes/bubble_handler.tscn" id="2_qlbj3"]
 [ext_resource type="PackedScene" uid="uid://d02maub8lgej2" path="res://Scenes/crab.tscn" id="3_o5q25"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_hf3ck")]
 

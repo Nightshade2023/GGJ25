@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxgjgu16ry1tf"]
+
+[ext_resource type="Texture2D" uid="uid://cb887bc6161ia" path="res://icon.svg" id="1_76lih"]
+[ext_resource type="PackedScene" uid="uid://fjevqv8p8fd4" path="res://Scenes/player.tscn" id="2_04dun"]
+[ext_resource type="PackedScene" uid="uid://d02maub8lgej2" path="res://Scenes/crab.tscn" id="3_vn4w3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4j20"]
+size = Vector2(125, 122.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(152, 139)
+texture = ExtResource("1_76lih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(153.5, 139.75)
+shape = SubResource("RectangleShape2D_g4j20")
+
+[node name="Player" parent="." instance=ExtResource("2_04dun")]
+
+[node name="Crab" parent="." instance=ExtResource("3_vn4w3")]
+position = Vector2(-492, 584)

@@ -6,6 +6,28 @@ const SPEED = 300.0
 const ACCEL = 4.0
 
 
+# Declare variables
+@onready var raycast = RayCast2D.new()  # Create a RayCast2D instance
+
+func _ready() -> void:
+	# Add the RayCast2D node dynamically to the enemy
+	add_child(raycast)
+	raycast.enabled = true
+	raycast.add_exception(self)
+
+func has_line_of_sight(target: Node2D) -> bool:
+	# Set RayCast2D's starting and ending positions
+	raycast.global_position = global_position  # Start from the enemy's position
+	raycast.target_position = raycast.to_local(target.global_position)
+	#print(target)
+	#print(target.global_position)
+	# Perform a collision check
+	raycast.force_raycast_update()  # Update the raycast
+	var colliding_body = raycast.get_collider()
+	#print(raycast.get_collider())
+	# Check if the collision is the player or if something is in the way
+	return colliding_body == target
+
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector2.ZERO
@@ -40,8 +62,12 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_plr_detector_body_entered(body: Node2D) -> void:
+	#print("I smell something")
 	if body.is_in_group("player"):
-		point_of_interest = body
+		#print("I smell someone")
+		if has_line_of_sight(body):
+			point_of_interest = body
+			#print("I see you")
 	if body.is_in_group("enemy_obstacle"):
 		obstacles.append(body)
 		
