@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://4jcr77fskgcq"]
 
-[ext_resource type="StyleBox" path="res://Scenes/creditsbackbutton.tres" id="1_w1fb7"]
+[ext_resource type="StyleBox" uid="uid://bm3emeghrekb2" path="res://Scenes/creditsbackbutton.tres" id="1_w1fb7"]
 [ext_resource type="Script" path="res://Scenes/creditsbuttonfunction.gd" id="1_y8hth"]
-[ext_resource type="StyleBox" path="res://Scenes/creditsbackbuttonpressed.tres" id="2_tfjs6"]
+[ext_resource type="StyleBox" uid="uid://cbi1lo4jef8qe" path="res://Scenes/creditsbackbuttonpressed.tres" id="2_tfjs6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2f3f"]
 
@@ -54,11 +54,11 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
-text = "331 - Assets
+text = "331 - Assets/Art
 
 Daniel - Developer/Narrative
 
-Deuce - Developer
+Deuce - Developer/Music
 
 Tristen - UI/Music"
 
