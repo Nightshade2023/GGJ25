@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var point_of_interest : Node
 var obstacles := []
-const SPEED = 200.0
+const SPEED = 250.0
 const ACCEL = 10.0
 
 
@@ -96,4 +96,5 @@ func _on_plr_detector_body_exited(body: Node2D) -> void:
 
 func _on_attack_body_entered(body: Node2D) -> void:
 	if body.has_method("die"):
+		body.update_score()
 		get_tree().change_scene_to_file("res://Scenes/DeathCutscene.tscn")

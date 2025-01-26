@@ -81,10 +81,7 @@ func set_speed_scale(scale : float, seconds : int) -> void:
 	$SpeedTimer.start(seconds)
 	
 func die():
-	if not score_data:
-		score_data.load("res://save_game.tres")
-	score_data.scores.append(score)
-	score_data.write_savegame()
+	update_score()
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn") # Temporary
 
 
@@ -98,3 +95,9 @@ func _on_theme_1_pressed() -> void:
 func _on_theme_2_pressed() -> void:
 	$AudioStreamPlayer2D.stream = ResourceLoader.load("res://example_melody_GGJ25.mp3")
 	$AudioStreamPlayer2D.play()
+	
+func update_score() -> void:
+	if not score_data:
+		score_data.load("res://save_game.tres")
+	score_data.scores.append(score)
+	score_data.write_savegame()

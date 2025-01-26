@@ -370,6 +370,38 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 
+[node name="Theme1" type="Button" parent="CanvasLayer/SettingsPage/Panel/musiclabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.852431
+anchor_top = 0.323302
+anchor_right = 0.852431
+anchor_bottom = 0.323302
+offset_left = 452.781
+offset_top = 0.692129
+offset_right = 527.781
+offset_bottom = 31.6921
+grow_horizontal = 0
+grow_vertical = 2
+text = "Theme 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Theme2" type="Button" parent="CanvasLayer/SettingsPage/Panel/musiclabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.921007
+anchor_top = 0.323302
+anchor_right = 0.921007
+anchor_bottom = 0.323302
+offset_left = 505.859
+offset_top = 0.692129
+offset_right = 580.859
+offset_bottom = 31.6921
+grow_horizontal = 0
+grow_vertical = 2
+text = "Theme 2"
+metadata/_edit_use_anchors_ = true
+
 [node name="SFXlabel" type="Label" parent="CanvasLayer/SettingsPage/Panel"]
 layout_mode = 1
 anchors_preset = 4
@@ -402,36 +434,6 @@ theme_override_icons/grabber_highlight = SubResource("ImageTexture_l6pkd")
 max_value = 1.0
 step = 0.001
 value = 1.0
-
-[node name="Theme1" type="Button" parent="CanvasLayer/SettingsPage/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.83
-anchor_top = 0.331
-anchor_right = 0.83
-anchor_bottom = 0.331
-offset_left = -42.16
-offset_top = -19.488
-offset_right = 32.84
-offset_bottom = 11.512
-grow_horizontal = 0
-grow_vertical = 2
-text = "Theme 1"
-
-[node name="Theme2" type="Button" parent="CanvasLayer/SettingsPage/Panel"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -153.0
-offset_top = -129.0
-offset_right = -78.0
-offset_bottom = -98.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Theme 2"
 
 [node name="Score" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
@@ -470,7 +472,7 @@ playback_type = 1
 [connection signal="pressed" from="CanvasLayer/SettingsPage/Panel/SettingsButton" to="CanvasLayer/SettingsPage/Panel" method="_on_settings_button_pressed"]
 [connection signal="drag_ended" from="CanvasLayer/SettingsPage/Panel/musiclabel/musicbar" to="CanvasLayer" method="_on_musicbar_drag_ended"]
 [connection signal="value_changed" from="CanvasLayer/SettingsPage/Panel/musiclabel/musicbar" to="CanvasLayer" method="_on_musicbar_value_changed"]
+[connection signal="pressed" from="CanvasLayer/SettingsPage/Panel/musiclabel/Theme1" to="." method="_on_theme_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsPage/Panel/musiclabel/Theme2" to="." method="_on_theme_2_pressed"]
 [connection signal="drag_ended" from="CanvasLayer/SettingsPage/Panel/SFXlabel/SFXbar" to="CanvasLayer" method="_on_sf_xbar_drag_ended"]
 [connection signal="value_changed" from="CanvasLayer/SettingsPage/Panel/SFXlabel/SFXbar" to="CanvasLayer" method="_on_sf_xbar_value_changed"]
-[connection signal="pressed" from="CanvasLayer/SettingsPage/Panel/Theme1" to="." method="_on_theme_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/SettingsPage/Panel/Theme2" to="." method="_on_theme_2_pressed"]
