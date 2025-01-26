@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var point_of_interest : Node
 var obstacles := []
-const SPEED = 200.0
+const SPEED = 250.0
 const ACCEL = 10.0
 
 
