@@ -8,10 +8,11 @@ Bubble Handler:
 -spawns bubbles as children	-Complete
 -spawns bubble around player	-Complete
 -spawns bubbles outside camera	-Complete
+-spawn rates for bubbles	-Complete
 
 Bubble Class:
 -pops when ran into		-Complete
--gives effect contained		-Partial
+-gives effect contained		-Complete
 -(animated) sprite		-Complete
 
 Effect Scene:
@@ -19,5 +20,5 @@ Effect Scene:
 -SF6 - slow			-Complete
 -He - fast			-Complete
 -CO2 - nothin			-Complete
--OH2 - boom			-Pending
--"Gold" - full			-Pending
+-OH2 - boom			-Complete
+-"Gold" - full			-Complete
