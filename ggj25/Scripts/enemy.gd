@@ -96,4 +96,5 @@ func _on_plr_detector_body_exited(body: Node2D) -> void:
 
 func _on_attack_body_entered(body: Node2D) -> void:
 	if body.has_method("die"):
+		body.update_score()
 		get_tree().change_scene_to_file("res://Scenes/DeathCutscene.tscn")
