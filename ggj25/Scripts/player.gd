@@ -66,6 +66,9 @@ func _handle_player_controls(delta: float) -> void:
 	
 func _tick_breath(delta: float) -> void:
 	Breath -= BreathLossRate * delta
+	
+func _player_hurt():
+	$HurtStreamPlayer2D.play()
 
 
 func _on_dash_timer_timeout() -> void:
