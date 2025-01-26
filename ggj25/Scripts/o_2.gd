@@ -8,6 +8,7 @@ func do_behavior(entity):
 		#print(entity.Breath)
 		#print("BREATHE DAMN YOU!")
 		entity.Breath += refill_amount
+	$AudioStreamPlayer2D.play()
 	$AnimatedSprite2D.play()
 	#if entity.is_in_group("player"):
 		#print(entity.Breath)

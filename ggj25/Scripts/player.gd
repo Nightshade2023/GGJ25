@@ -51,7 +51,10 @@ func _handle_player_controls(delta: float) -> void:
 	look_at(look_pos)
 	if velocity.length() < 20:
 		$AnimatedSprite2D.stop()
+		$SwimSound.stop()
 	else:
+		if not $SwimSound.playing:
+			$SwimSound.play()
 		$AnimatedSprite2D.play("default")
 	# Dash
 	if Input.is_action_just_pressed("Shift"):
@@ -59,7 +62,7 @@ func _handle_player_controls(delta: float) -> void:
 		$DashTimer.start()
 		Breath -= 10
 		$AnimatedSprite2D.speed_scale = 3
-	#print(Breath)
+	#print($SwimSound.playing)
 	
 func _tick_breath(delta: float) -> void:
 	Breath -= BreathLossRate * delta
@@ -84,3 +87,11 @@ func die():
 
 func _on_speed_timer_timeout() -> void:
 	plr_speed_scale = 1
+
+func _on_theme_1_pressed() -> void:
+	$AudioStreamPlayer2D.stream = ResourceLoader.load("res://GJ_Music.ogg")
+	$AudioStreamPlayer2D.play()
+
+func _on_theme_2_pressed() -> void:
+	$AudioStreamPlayer2D.stream = ResourceLoader.load("res://example_melody_GGJ25.mp3")
+	$AudioStreamPlayer2D.play()

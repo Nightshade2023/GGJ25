@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://cjiub18ub5t5b"]
+[gd_scene load_steps=32 format=3 uid="uid://cjiub18ub5t5b"]
 
 [ext_resource type="Script" path="res://Scripts/he.gd" id="1_2gkb1"]
 [ext_resource type="Texture2D" uid="uid://nepuko4f0ag3" path="res://Assets/Art/Gameplay/large_bubble_pop_sheet.png" id="2_h3pxr"]
 [ext_resource type="Texture2D" uid="uid://c6ugo0b3pk5ol" path="res://Assets/Art/Gameplay/medium_bubble_pop_sheet.png" id="3_x6nuw"]
 [ext_resource type="Texture2D" uid="uid://63haq56tbuob" path="res://Assets/Art/Gameplay/small_bubble_pop_sheet.png" id="4_vf0j1"]
+[ext_resource type="AudioStream" uid="uid://cb0t55lkei4an" path="res://Assets/SFX/bubble-pop-283674.mp3" id="5_e43yk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jqaps"]
 radius = 4.0
@@ -203,6 +204,10 @@ shape = SubResource("CircleShape2D_jqaps")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t6kpr")
 animation = &"Small"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_e43yk")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,16 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1w7lqgcfo43"]
 
-[ext_resource type="Texture2D" uid="uid://eo1cxf58sear" path="res://Assets/Art/Gameplay/sand_tile.png" id="1_gmf0r"]
+[ext_resource type="Texture2D" uid="uid://cj5qvaqdcxlof" path="res://Assets/Art/Gameplay/large_sand_tile.png" id="1_w4cps"]
 [ext_resource type="Script" path="res://Scenes/sand.gd" id="2_pbkcr"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7hhf"]
-texture = ExtResource("1_gmf0r")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxipc"]
+texture = ExtResource("1_w4cps")
+texture_region_size = Vector2i(1600, 1600)
 0:0/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_umemw"]
-sources/0 = SubResource("TileSetAtlasSource_f7hhf")
+[sub_resource type="TileSet" id="TileSet_y11vu"]
+tile_size = Vector2i(1600, 1600)
+sources/0 = SubResource("TileSetAtlasSource_vxipc")
 
 [node name="Sand" type="TileMapLayer"]
-z_index = -1
-tile_set = SubResource("TileSet_umemw")
+z_index = -2
+tile_set = SubResource("TileSet_y11vu")
 script = ExtResource("2_pbkcr")

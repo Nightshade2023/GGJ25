@@ -2,6 +2,7 @@ extends Bubble
 
 
 func do_behavior(entity):
+	$AudioStreamPlayer2D.play()
 	$AnimatedSprite2D.play()
 
 
