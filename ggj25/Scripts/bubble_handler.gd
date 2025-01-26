@@ -1,10 +1,11 @@
 extends Node2D
 
-var bubbleInstances = [preload("res://Scenes/Bubble_Effects/o2.tscn"),
-preload("res://Scenes/Bubble_Effects/sf6.tscn"),
-preload("res://Scenes/Bubble_Effects/he.tscn"),
-preload("res://Scenes/Bubble_Effects/co2.tscn"),
-preload("res://Scenes/Bubble_Effects/oh2.tscn"),
+var bubbleInstances = [preload("res://Scenes/Bubble_Effects/o2.tscn"),	# 40%
+preload("res://Scenes/Bubble_Effects/sf6.tscn"),						# 20%
+preload("res://Scenes/Bubble_Effects/he.tscn"),							# 20%
+preload("res://Scenes/Bubble_Effects/co2.tscn"),						# 9%
+preload("res://Scenes/Bubble_Effects/oh2.tscn"),						# 10%
+preload("res://Scenes/Bubble_Effects/gold_bubble.tscn"),				# 1%
 ]
 var bubblesSpawned: int
 var spawn_radius := 500
@@ -18,6 +19,24 @@ func _spawn_bubble():
 		print("No bubbles.")
 		return
 
+	var bubble_picker:int = randi_range(1, 100)
+	
+	if (0 < bubble_picker) and (bubble_picker <= 40):
+		var new_bubble : Bubble = bubbleInstances[0].instantiate()
+	elif (40 < bubble_picker) and (bubble_picker <= 60):
+		var new_bubble : Bubble = bubbleInstances[1].instantiate()
+	elif (60 < bubble_picker) and (bubble_picker <= 80):
+		var new_bubble : Bubble = bubbleInstances[2].instantiate()
+	elif (80 < bubble_picker) and (bubble_picker <= 89):
+		var new_bubble : Bubble = bubbleInstances[3].instantiate()
+	elif bubble_picker == 90:
+		var new_bubble : Bubble = bubbleInstances[5].instantiate()
+	elif (90 < bubble_picker) and (bubble_picker <= 100):
+		var new_bubble : Bubble = bubbleInstances[4].instantiate()
+	else:
+		var new_bubble : Bubble = bubbleInstances[0].instantiate()
+		
+		
 	var new_bubble : Bubble = bubbleInstances.pick_random().instantiate()
 	
 	# Position the bubble relative to the player
