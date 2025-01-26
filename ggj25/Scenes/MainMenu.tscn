@@ -1,11 +1,11 @@
 [gd_scene load_steps=21 format=3 uid="uid://bmjgemrotvdlw"]
 
-[ext_resource type="StyleBox" path="res://Scenes/buttondisabled.tres" id="1_3td4g"]
+[ext_resource type="StyleBox" uid="uid://bgi5mikoysebl" path="res://Scenes/buttondisabled.tres" id="1_3td4g"]
 [ext_resource type="Script" path="res://Scenes/button_functions.gd" id="1_qwlhk"]
-[ext_resource type="StyleBox" path="res://Scenes/button.tres" id="1_w5t35"]
+[ext_resource type="StyleBox" uid="uid://cfwcgcl8juhii" path="res://Scenes/button.tres" id="1_w5t35"]
 [ext_resource type="FontFile" uid="uid://cgobhkmxevoer" path="res://comicsans/comicbd.ttf" id="2_8xf8w"]
 [ext_resource type="Texture2D" uid="uid://b8jr8lus6r8tr" path="res://Assets/buttonpop.png" id="3_sqf6q"]
-[ext_resource type="StyleBox" path="res://Scenes/buttonpressed.tres" id="3_ydpty"]
+[ext_resource type="StyleBox" uid="uid://pbe0ybp5pwo3" path="res://Scenes/buttonpressed.tres" id="3_ydpty"]
 [ext_resource type="FontFile" uid="uid://c37t37ugjwlo" path="res://comicsans/comic.ttf" id="7_ue4gw"]
 [ext_resource type="Script" path="res://Scenes/settings_functions.gd" id="8_6skxc"]
 [ext_resource type="StyleBox" uid="uid://56ffswk6tnh" path="res://Scenes/volumeslider.tres" id="9_1hg7b"]
@@ -14,7 +14,7 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chuag"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cnqmv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uvn6"]
 texture = ExtResource("3_sqf6q")
 
 [sub_resource type="Theme" id="Theme_uq6ih"]
@@ -22,13 +22,13 @@ default_font = ExtResource("2_8xf8w")
 default_font_size = 0
 Button/styles/disabled = ExtResource("1_3td4g")
 Button/styles/focus = ExtResource("3_ydpty")
-Button/styles/hover = SubResource("StyleBoxTexture_cnqmv")
+Button/styles/hover = SubResource("StyleBoxTexture_2uvn6")
 Button/styles/normal = ExtResource("1_w5t35")
 Button/styles/pressed = ExtResource("3_ydpty")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhif3"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5yper"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bkplk"]
 texture = ExtResource("3_sqf6q")
 
 [sub_resource type="Theme" id="Theme_24kxi"]
@@ -36,7 +36,7 @@ default_font = ExtResource("2_8xf8w")
 default_font_size = 0
 Button/styles/disabled = ExtResource("1_3td4g")
 Button/styles/focus = ExtResource("3_ydpty")
-Button/styles/hover = SubResource("StyleBoxTexture_5yper")
+Button/styles/hover = SubResource("StyleBoxTexture_bkplk")
 Button/styles/normal = ExtResource("1_w5t35")
 Button/styles/pressed = ExtResource("3_ydpty")
 
@@ -273,6 +273,7 @@ step = 0.001
 value = 1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -1)
 stream = ExtResource("11_ydw1a")
 autoplay = true
 bus = &"Music"

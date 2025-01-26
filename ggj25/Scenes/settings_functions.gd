@@ -13,3 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_settings_button_pressed() -> void:
 	get_parent().visible = not get_parent().visible
+	Engine.time_scale = 1
