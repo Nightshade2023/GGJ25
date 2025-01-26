@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var point_of_interest : Node
 var obstacles := []
-const SPEED = 300.0
+const SPEED = 600.0
 const ACCEL = 4.0
 
 
@@ -78,3 +78,8 @@ func _on_plr_detector_body_exited(body: Node2D) -> void:
 		point_of_interest = null
 	if body in obstacles:
 		obstacles.erase(body)
+
+
+func _on_attack_body_entered(body: Node2D) -> void:
+	if body.has_method("die"):
+		body.die()

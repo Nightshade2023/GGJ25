@@ -103,7 +103,7 @@ shape = SubResource("CapsuleShape2D_6jj3v")
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
 
@@ -114,6 +114,6 @@ parameters/looping = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_lxib6")
-frame_progress = 0.0232565
+frame_progress = 0.942044
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

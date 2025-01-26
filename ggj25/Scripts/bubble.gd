@@ -16,12 +16,12 @@ func do_behavior(entity):
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	print("GET AWAY!!")
+	#print("GET AWAY!!")
 	# Signal Effect Given
-	print("Effect Applied!")
+	#print("Effect Applied!")
 	do_behavior(body)
 	# Trigger Pop Animation
-	print("Popping!")
+	#print("Popping!")
 	# Pop
-	print("*Dies*")
+	#print("*Dies*")
 	#queue_free()

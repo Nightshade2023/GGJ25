@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d02maub8lgej2"]
+[gd_scene load_steps=6 format=3 uid="uid://d02maub8lgej2"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_oi14u"]
 [ext_resource type="Texture2D" uid="uid://cb887bc6161ia" path="res://icon.svg" id="2_jkdqg"]
@@ -9,6 +9,9 @@ height = 132.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_geuy6"]
 radius = 507.004
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mwt31"]
+radius = 74.027
 
 [node name="Crab" type="CharacterBody2D"]
 script = ExtResource("1_oi14u")
@@ -25,5 +28,11 @@ shape = SubResource("CapsuleShape2D_kbccw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plrDetector"]
 shape = SubResource("CircleShape2D_geuy6")
 
+[node name="attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+shape = SubResource("CircleShape2D_mwt31")
+
 [connection signal="body_entered" from="plrDetector" to="." method="_on_plr_detector_body_entered"]
 [connection signal="body_exited" from="plrDetector" to="." method="_on_plr_detector_body_exited"]
+[connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]

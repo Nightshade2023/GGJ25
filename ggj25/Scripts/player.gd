@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	#print(score)
 	#print(Breath)
 	move_and_slide()
+	Breath = clamp(Breath, 0, 100)
 	
 func _handle_player_controls(delta: float) -> void:
 	var direction:= Vector2(int(Input.is_action_pressed("D")) - int(Input.is_action_pressed("A")),int(Input.is_action_pressed("S")) - int(Input.is_action_pressed("W"))).normalized()
@@ -36,6 +37,7 @@ func _handle_player_controls(delta: float) -> void:
 		$DashTimer.start()
 		Breath -= 10
 		$AnimatedSprite2D.speed_scale = 3
+	print(Breath)
 	
 func _tick_breath(delta: float) -> void:
 	Breath -= BreathLossRate * delta
@@ -44,3 +46,7 @@ func _tick_breath(delta: float) -> void:
 func _on_dash_timer_timeout() -> void:
 	SPEED = 500.0
 	$AnimatedSprite2D.speed_scale = 1
+	
+func die():
+	
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn") # Temporary

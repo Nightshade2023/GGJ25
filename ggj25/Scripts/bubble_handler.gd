@@ -18,7 +18,8 @@ func _spawn_bubble():
 	
 	# Position the bubble relative to the player
 	var bubble_offset = Vector2(0, 0)
-	# Circle spawn, not outside yet
+	# Circle spawn
+	spawn_radius = (get_viewport_rect().size.y)
 	var x_dir = (randi_range(0,1)*2)-1
 	var y_dir = (randi_range(0,1)*2)-1
 	bubble_offset.x = spawn_radius*x_dir
@@ -27,11 +28,12 @@ func _spawn_bubble():
 	new_bubble.position = $"..".position + bubble_offset
 	
 	# Get the BubbleContainer node
-	var bubble_container = get_node("/root/Node2D/BubbleContainer")
+	var bubble_container = get_node("/root/Node2D2/BubbleContainer")
 	if bubble_container:
 		bubble_container.add_child(new_bubble)  # Add the bubble to the stationary node
 	# Add to bubble count
 	bubblesSpawned += 1
+	#print(bubblesSpawned)
 	
 func _on_timer_timeout() -> void:
 	_spawn_bubble()
