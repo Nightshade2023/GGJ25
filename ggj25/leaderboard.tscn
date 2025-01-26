@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg7rkdlx7wqsu"]
+[gd_scene load_steps=6 format=3 uid="uid://dg7rkdlx7wqsu"]
 
 [ext_resource type="Script" path="res://leaderboard.gd" id="1_163rj"]
+[ext_resource type="StyleBox" uid="uid://cilbb80yavkut" path="res://scoreboardbutton.tres" id="2_31m55"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogjj7"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8igmx"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_cqs4n"]
+Button/styles/focus = ExtResource("2_31m55")
+Button/styles/hover = SubResource("StyleBoxFlat_ogjj7")
+Button/styles/normal = ExtResource("2_31m55")
+Button/styles/pressed = SubResource("StyleBoxFlat_8igmx")
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
@@ -18,7 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.266575, 0.266575, 0.266575, 1)
+color = Color(0.392157, 0.392157, 0.392157, 1)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -27,48 +48,79 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = -86.0
+offset_top = -128.0
+offset_right = 84.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_cqs4n")
 text = "Main Menu"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -65.5
-offset_right = 20.0
-offset_bottom = 65.5
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 25.0
+offset_bottom = 511.0
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="TITLE" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Highest Scores"
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0.814665, 0.700278, 0.306174, 1)
+theme_override_colors/font_shadow_color = Color(0.32537, 0.212224, 0, 1)
+theme_override_colors/font_outline_color = Color(0.311698, 0.1696, 2.40654e-08, 1)
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 50
+text = " Highest Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.00308561, 0.142786, 0.66564, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 text = "1
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 text = "2
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
