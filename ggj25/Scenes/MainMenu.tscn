@@ -1,14 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://bmjgemrotvdlw"]
+[gd_scene load_steps=25 format=3 uid="uid://bmjgemrotvdlw"]
 
-[ext_resource type="StyleBox" path="res://Scenes/buttondisabled.tres" id="1_3td4g"]
+[ext_resource type="StyleBox" uid="uid://bgi5mikoysebl" path="res://Scenes/buttondisabled.tres" id="1_3td4g"]
 [ext_resource type="Script" path="res://Scenes/button_functions.gd" id="1_qwlhk"]
-[ext_resource type="StyleBox" path="res://Scenes/button.tres" id="1_w5t35"]
+[ext_resource type="StyleBox" uid="uid://cfwcgcl8juhii" path="res://Scenes/button.tres" id="1_w5t35"]
+[ext_resource type="Script" path="res://Scenes/mainmenu.gd" id="1_y0o6j"]
 [ext_resource type="FontFile" uid="uid://cgobhkmxevoer" path="res://comicsans/comicbd.ttf" id="2_8xf8w"]
 [ext_resource type="Texture2D" uid="uid://doqeoe37gagdx" path="res://Assets/UI/main_menu_background.png" id="2_w3qrd"]
 [ext_resource type="PackedScene" uid="uid://bk7qkmgfj4c3j" path="res://Scenes/water_shader.tscn" id="3_n7tc1"]
 [ext_resource type="PackedScene" uid="uid://51grcab7va5m" path="res://Scenes/shader_tiler.tscn" id="3_p6l4r"]
 [ext_resource type="Texture2D" uid="uid://b8jr8lus6r8tr" path="res://Assets/buttonpop.png" id="3_sqf6q"]
-[ext_resource type="StyleBox" path="res://Scenes/buttonpressed.tres" id="3_ydpty"]
+[ext_resource type="StyleBox" uid="uid://pbe0ybp5pwo3" path="res://Scenes/buttonpressed.tres" id="3_ydpty"]
 [ext_resource type="FontFile" uid="uid://c37t37ugjwlo" path="res://comicsans/comic.ttf" id="7_ue4gw"]
 [ext_resource type="Script" path="res://Scenes/settings_functions.gd" id="8_6skxc"]
 [ext_resource type="StyleBox" uid="uid://56ffswk6tnh" path="res://Scenes/volumeslider.tres" id="9_1hg7b"]
@@ -59,6 +60,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y0o6j")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -187,6 +189,25 @@ theme_override_font_sizes/font_size = 45
 text = " Credits "
 icon_alignment = 1
 
+[node name="QuitButton" type="Button" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 196.0
+offset_right = 125.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_uq6ih")
+theme_override_font_sizes/font_size = 45
+text = " Quit "
+icon_alignment = 1
+
 [node name="SettingsPage" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 1
@@ -299,6 +320,36 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 
+[node name="Theme1" type="Button" parent="SettingsPage/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.83
+anchor_top = 0.331
+anchor_right = 0.83
+anchor_bottom = 0.331
+offset_left = -42.16
+offset_top = -19.488
+offset_right = 32.84
+offset_bottom = 11.512
+grow_horizontal = 0
+grow_vertical = 2
+text = "Theme 1"
+
+[node name="Theme2" type="Button" parent="SettingsPage/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -129.0
+offset_right = -78.0
+offset_bottom = -98.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Theme 2"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(451, 119)
 stream = ExtResource("15_utmps")
@@ -310,8 +361,11 @@ parameters/looping = true
 [connection signal="pressed" from="PanelContainer/Panel/SettingsButton" to="PanelContainer/Panel" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/LeaderBoardButton" to="PanelContainer/Panel" method="_on_leader_board_button_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/CreditsButton" to="PanelContainer/Panel" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="PanelContainer/Panel/QuitButton" to="PanelContainer/Panel" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="SettingsPage/Panel/SettingsButton" to="SettingsPage/Panel" method="_on_settings_button_pressed"]
 [connection signal="drag_ended" from="SettingsPage/Panel/musiclabel/musicbar" to="PanelContainer/Panel" method="_on_musicbar_drag_ended"]
 [connection signal="value_changed" from="SettingsPage/Panel/musiclabel/musicbar" to="PanelContainer/Panel" method="_on_musicbar_value_changed"]
 [connection signal="drag_ended" from="SettingsPage/Panel/SFXlabel/SFXbar" to="PanelContainer/Panel" method="_on_sf_xbar_drag_ended"]
 [connection signal="value_changed" from="SettingsPage/Panel/SFXlabel/SFXbar" to="PanelContainer/Panel" method="_on_sf_xbar_value_changed"]
+[connection signal="pressed" from="SettingsPage/Panel/Theme1" to="." method="_on_theme_1_pressed"]
+[connection signal="pressed" from="SettingsPage/Panel/Theme2" to="." method="_on_theme_2_pressed"]
