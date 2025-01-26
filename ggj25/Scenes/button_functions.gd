@@ -35,3 +35,7 @@ func _on_musicbar_value_changed(value: float) -> void:
 func _on_sf_xbar_value_changed(value: float) -> void:
 	GameInfo.music_vol = value
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(GameInfo.sfx_vol))
+
+
+func _on_play_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/test_daniel.tscn") # Temporary

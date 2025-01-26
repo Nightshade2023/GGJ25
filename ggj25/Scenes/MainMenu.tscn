@@ -103,6 +103,13 @@ theme_override_font_sizes/font_size = 45
 text = " Play "
 icon_alignment = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PanelContainer/Panel/PlayButton"]
+position = Vector2(0, -1)
+stream = ExtResource("11_ydw1a")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
 [node name="SettingsButton" type="Button" parent="PanelContainer/Panel"]
 layout_mode = 1
 anchors_preset = 8
@@ -279,6 +286,7 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
+[connection signal="pressed" from="PanelContainer/Panel/PlayButton" to="PanelContainer/Panel" method="_on_play_button_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/SettingsButton" to="PanelContainer/Panel" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/CreditsButton" to="PanelContainer/Panel" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="SettingsPage/Panel/SettingsButton" to="SettingsPage/Panel" method="_on_settings_button_pressed"]
