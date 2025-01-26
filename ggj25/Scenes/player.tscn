@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://fjevqv8p8fd4"]
+[gd_scene load_steps=21 format=3 uid="uid://fjevqv8p8fd4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8htqa"]
 [ext_resource type="Texture2D" uid="uid://bbq4khm8bkuf" path="res://Assets/Art/Gameplay/swimming_sprites.png" id="3_dvqha"]
 [ext_resource type="AudioStream" uid="uid://e76tmg3ox58q" path="res://GJ_Music.ogg" id="3_orarp"]
+[ext_resource type="Script" path="res://Scenes/breath_bar.gd" id="4_m06n0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jj3v"]
 radius = 9.0
@@ -93,6 +94,30 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6l2lq"]
+bg_color = Color(0.13902, 0.191074, 0.198164, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yun5f"]
+bg_color = Color(0.0464493, 0.618532, 0.498323, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.137255, 0.192157, 0.2, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_e6ytg"]
+ProgressBar/font_sizes/font_size = 12
+ProgressBar/styles/background = SubResource("StyleBoxFlat_6l2lq")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_yun5f")
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_8htqa")
 
@@ -115,5 +140,22 @@ parameters/looping = true
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_lxib6")
 frame_progress = 0.207973
+
+[node name="BreathBar" type="ProgressBar" parent="."]
+offset_left = -41.0
+offset_top = -63.0
+offset_right = 40.0
+offset_bottom = -30.0
+theme = SubResource("Theme_e6ytg")
+script = ExtResource("4_m06n0")
+
+[node name="Label" type="Label" parent="BreathBar"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 1.0
+offset_right = 87.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 8
+text = "BREATH"
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
