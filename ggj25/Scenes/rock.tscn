@@ -1,0 +1,86 @@
+[gd_scene load_steps=14 format=3 uid="uid://bf5xobaua5pvf"]
+
+[ext_resource type="Script" path="res://rock.gd" id="1_lyfy4"]
+[ext_resource type="Texture2D" uid="uid://c8pm5lbxnr01t" path="res://Assets/Art/Gameplay/large_rock.png" id="2_x58ei"]
+[ext_resource type="Texture2D" uid="uid://sr8bidad3c6t" path="res://Assets/Art/Gameplay/medium_rock_1.png" id="3_jrwdv"]
+[ext_resource type="Texture2D" uid="uid://dwybur61mh56f" path="res://Assets/Art/Gameplay/medium_rock_2.png" id="4_4yu6i"]
+[ext_resource type="Texture2D" uid="uid://dnsbtk4wn7ivv" path="res://Assets/Art/Gameplay/small_rock_1.png" id="5_7b3kp"]
+[ext_resource type="Texture2D" uid="uid://c57ppnmk60qor" path="res://Assets/Art/Gameplay/small_rock_2.png" id="6_xo05p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3m7x"]
+atlas = ExtResource("2_x58ei")
+region = Rect2(0, 0, 122, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35nke"]
+atlas = ExtResource("3_jrwdv")
+region = Rect2(0, 0, 61, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybfrv"]
+atlas = ExtResource("4_4yu6i")
+region = Rect2(0, 0, 66, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy2tk"]
+atlas = ExtResource("5_7b3kp")
+region = Rect2(0, 0, 26, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cxeg"]
+atlas = ExtResource("6_xo05p")
+region = Rect2(0, 0, 30, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_neybi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3m7x")
+}],
+"loop": true,
+"name": &"large",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35nke")
+}],
+"loop": true,
+"name": &"medium1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybfrv")
+}],
+"loop": true,
+"name": &"medium2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy2tk")
+}],
+"loop": true,
+"name": &"small1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cxeg")
+}],
+"loop": true,
+"name": &"small2",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mww27"]
+size = Vector2(26, 20)
+
+[node name="rock" type="StaticBody2D"]
+script = ExtResource("1_lyfy4")
+type = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_neybi")
+animation = &"small1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.7, 3.2)
+shape = SubResource("RectangleShape2D_mww27")
